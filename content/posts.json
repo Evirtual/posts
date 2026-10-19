@@ -1,0 +1,61 @@
+{
+  "platforms": {
+    "kofi": { "name": "Ko-fi", "limit": 700, "limitNote": "Measured: Ko-fi's Description box stops at 700", "hasTitle": true },
+    "facebook": { "name": "Facebook", "limit": 63206, "limitNote": "Facebook's post limit", "hasTitle": false },
+    "instagram": { "name": "Instagram", "limit": 2200, "limitNote": "Instagram's caption limit; links in captions are not clickable", "hasTitle": false },
+    "linkedin": { "name": "LinkedIn", "limit": 3000, "limitNote": "LinkedIn's post limit", "hasTitle": false }
+  },
+  "posts": [
+    {
+      "id": "intro",
+      "kicker": "Intro · pin this one",
+      "accent": "index",
+      "title": "What I'm building, and what a coffee pays for",
+      "images": [
+        { "file": "cover-all-projects.png", "label": "Cover, all projects", "alt": "Small, honest tools. Free and open source. A grid of six project images: CSS 3D Lab, JARVIS, Timeline, Bitcoin Analytics, Beyond and Edgaras Neverdauskas, Product Engineer." },
+        { "file": "css-3d-lab.jpg", "label": "CSS 3D Lab", "alt": "CSS 3D Lab: 3D on the web, no WebGL required." },
+        { "file": "jarvis.jpg", "label": "JARVIS", "alt": "J.A.R.V.I.S., a console that talks back." },
+        { "file": "timeline.png", "label": "Timeline", "alt": "The AI race: who shipped what, and when." },
+        { "file": "bitcoin.jpg", "label": "Bitcoin dashboard", "alt": "Bitcoin Analytics dashboard with price, range and volume charts." },
+        { "file": "beyond.jpg", "label": "Beyond", "alt": "Beyond the Glass: a black hole over floating islands." },
+        { "file": "intro-portfolio.png", "label": "Portfolio card (optional)", "alt": "Edgaras Neverdauskas, Product Engineer." }
+      ],
+      "text": {
+        "kofi": "Hi, I'm Edgaras. I build small, honest tools and publish them free and open source. No accounts, no ads, no paywall.\n\nCSS 3D Lab: 3D models in pure CSS\ncss3dlab.edgarasneverdauskas.com\n\nJARVIS: a console that talks back\njarvis.edgarasneverdauskas.com\n\nTimeline: the AI race on one time axis\ntimeline.edgarasneverdauskas.com\n\nBitcoin dashboard: BTC price and wallet balances\nbitcoin.edgarasneverdauskas.com\n\nBeyond: a 3D world with black holes\nbeyond.edgarasneverdauskas.com\n\nCode: github.com/Evirtual\n\nCoffees go to one goal: a year of domain and hosting. Every tool stays free either way. More on each project soon.",
+        "facebook": "I build small, honest tools and publish them free and open source. No accounts, no ads, no paywall.\n\nCSS 3D Lab: 3D models in pure CSS\nhttps://css3dlab.edgarasneverdauskas.com\n\nJARVIS: a console that talks back\nhttps://jarvis.edgarasneverdauskas.com\n\nTimeline: the AI race on one time axis\nhttps://timeline.edgarasneverdauskas.com\n\nBitcoin dashboard: BTC price and wallet balances\nhttps://bitcoin.edgarasneverdauskas.com\n\nBeyond: a 3D world with black holes\nhttps://beyond.edgarasneverdauskas.com\n\nAll the code is on GitHub: https://github.com/Evirtual\n\nIf one of them helps you, a coffee keeps the domains and hosting going: https://ko-fi.com/edgarasneverdauskas",
+        "instagram": "I build small, honest tools and publish them free and open source. No accounts, no ads, no paywall.\n\nCSS 3D Lab: 3D models in pure CSS\nJARVIS: a console that talks back\nTimeline: the AI race on one time axis\nBitcoin dashboard: BTC price and wallet balances\nBeyond: a 3D world with black holes\n\nSwipe through, and find every link in my bio.\n\n#webdev #opensource #css #javascript #buildinpublic #indiedev",
+        "linkedin": "I build small, honest tools and publish them free and open source. No accounts, no ads, no paywall. Here's what's live:\n\nCSS 3D Lab: 168 3D models built in pure CSS, each with an explanation and code you can copy.\nhttps://css3dlab.edgarasneverdauskas.com\n\nJARVIS: a console that talks back, with real readings from your machine.\nhttps://jarvis.edgarasneverdauskas.com\n\nTimeline: the AI race, with every lab on one shared time axis.\nhttps://timeline.edgarasneverdauskas.com\n\nBitcoin dashboard: the BTC price and your wrapped BTC across Ethereum, Base and BSC.\nhttps://bitcoin.edgarasneverdauskas.com\n\nBeyond: a floating 3D world with black holes.\nhttps://beyond.edgarasneverdauskas.com\n\nAll the code is on GitHub: https://github.com/Evirtual\n\nIf one of these is useful to you or your team, I'd like to hear about it."
+      }
+    },
+    {
+      "id": "css-3d-lab",
+      "kicker": "CSS 3D Lab · 168 models",
+      "accent": "css-3d-lab",
+      "title": "CSS 3D Lab: 168 3D models, no WebGL",
+      "images": [
+        { "file": "css-3d-lab.jpg", "label": "CSS 3D Lab", "alt": "CSS 3D Lab: 3D on the web, no WebGL required." }
+      ],
+      "text": {
+        "kofi": "A free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.\n\n• 120 are pure CSS, zero JavaScript\n• 48 use JS only to feed in values like pointer position; CSS still renders\n• The code windows are live editors\n• Export any model as MP4, WebM, PNG or JPEG\n\nWhat you copy is exactly what runs on the site. No hidden second version.\n\nTry it: css3dlab.edgarasneverdauskas.com\nCode: github.com/Evirtual/css-3d-lab\n\nIf it saved you a fight with preserve-3d, a coffee keeps the domain up.",
+        "facebook": "CSS 3D Lab is a free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.\n\n• 120 are pure CSS, zero JavaScript\n• 48 use JS only to feed in values like pointer position; CSS still renders\n• The code windows are live editors\n• Export any model as MP4, WebM, PNG or JPEG\n\nTry it: https://css3dlab.edgarasneverdauskas.com\nCode: https://github.com/Evirtual/css-3d-lab",
+        "instagram": "168 3D models, built with CSS. No WebGL.\n\n120 are pure CSS with zero JavaScript. The other 48 use JS only to feed in values like pointer position; CSS still does the rendering.\n\nEvery model runs live, explains how it works, and gives you a snippet to paste into any project. You can export any of them as video or an image.\n\nFree and open source. Link in bio: CSS 3D Lab.\n\n#css #css3d #webdev #frontend #creativecoding #opensource",
+        "linkedin": "CSS 3D Lab is a free gallery of 168 3D models built with CSS, no WebGL.\n\n120 are pure CSS with zero JavaScript. The other 48 use JavaScript only to feed in values like pointer position or time; CSS still does all the rendering.\n\nEach model runs live, comes with a step-by-step explanation, and gives you a minimal snippet you can paste into any project without a build step. What you copy is exactly what runs on the site, with no hidden second version.\n\nThe code windows are live editors, and any model can be exported as MP4, WebM, PNG or JPEG.\n\nTry it: https://css3dlab.edgarasneverdauskas.com\nCode: https://github.com/Evirtual/css-3d-lab"
+      }
+    },
+    {
+      "id": "jarvis",
+      "kicker": "JARVIS · measured, not simulated",
+      "accent": "jarvis",
+      "title": "JARVIS: a console that talks back, with real numbers",
+      "images": [
+        { "file": "jarvis.jpg", "label": "JARVIS", "alt": "J.A.R.V.I.S., a console that talks back." }
+      ],
+      "text": {
+        "kofi": "An Iron Man–style console you can talk to. Every figure on screen is measured, not simulated: your real CPU, GPU temperatures, network devices and weather.\n\n• Speak or type, and he answers out loud\n• Research lives as threads on a board\n• Web search with sources, pictures and video\n• Runs on your own Gemini (free tier) or ChatGPT key\n\nOpen it in the browser, or run it on your PC for full readings.\n\nTry it: jarvis.edgarasneverdauskas.com\nCode: github.com/Evirtual/jarvis\n\nYour key pays for your answers. A coffee covers my part: the domain and hosting.",
+        "facebook": "JARVIS is an Iron Man–style console you can talk to. Every figure on screen is measured, not simulated: your real CPU, GPU temperatures, network devices and weather.\n\n• Speak or type, and he answers out loud\n• Research lives as threads on a board\n• Web search with sources, pictures and video\n• Runs on your own Gemini (free tier) or ChatGPT key\n\nOpen it in the browser, or run it on your PC for full readings.\n\nTry it: https://jarvis.edgarasneverdauskas.com\nCode: https://github.com/Evirtual/jarvis",
+        "instagram": "An Iron Man–style console that talks back.\n\nEvery figure on screen is measured, not simulated: your real CPU, GPU temperatures, network devices and the weather where you are.\n\nSpeak or type and he answers out loud. Research lives as threads on a board. It runs on your own Gemini or ChatGPT key, and Gemini has a free tier.\n\nFree and open source. Link in bio: JARVIS.\n\n#jarvis #ironman #ai #webdev #opensource #buildinpublic",
+        "linkedin": "JARVIS is an Iron Man–style console you can talk to, built around one rule: every figure on screen is measured, not simulated. Real CPU cores, real GPU temperatures, the real devices on your network, the real weather where you are.\n\nYou speak or type, and answers stream in and are spoken as they're written. Research lives as threads on a board you can group, link and tidy by voice. Web search brings back sources, pictures and video inside the thread.\n\nIt runs on your own key: Gemini, which has a free tier, or ChatGPT. Connect both and it falls back from one to the other, and says why.\n\nTry it in the browser: https://jarvis.edgarasneverdauskas.com\nCode (AGPL-3.0): https://github.com/Evirtual/jarvis"
+      }
+    }
+  ]
+}
