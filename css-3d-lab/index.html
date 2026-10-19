@@ -1,62 +1,49 @@
 <!doctype html>
-<html lang="en" data-page="posts">
+<html lang="en" data-page="css-3d-lab">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSS 3D Lab: 168 3D models, no WebGL — Posts</title>
 <meta name="description" content="168 3D models in pure CSS, how each one works, and code you can paste anywhere.">
 <meta name="robots" content="noindex, nofollow">
-<script>try{var t=localStorage.getItem('posts-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('articles-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="icon" href="../images/cover-all-projects.png" type="image/png">
 <link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to the content</a>
+<a class="skip" href="#story">Skip to the post</a>
 <header class="site-head">
-  <a class="home" href="../"><svg class="mark" viewBox="0 0 38 24" aria-hidden="true" focusable="false"><text x="0" y="19.3" font-family="DM Sans, ui-sans-serif, system-ui, sans-serif" font-weight="700" font-size="21" fill="currentColor">EN</text><rect x="30.1" y="12.8" width="6.5" height="6.5" rx="1.2" fill="var(--accent)"/></svg><span>Posts</span></a>
-  <nav class="head-nav" aria-label="Elsewhere">
-    <a href="https://articles.edgarasneverdauskas.com/">Articles</a>
-    <button type="button" class="theme-switch" hidden aria-label="Colour theme: following the system. Click for light." title="Colour theme: following the system. Click for light.">
+  <nav aria-label="Site"><a class="home" href="../"><span aria-hidden="true">←</span> All posts</a></nav>
+  <div class="head-end"><a class="head-link" href="https://articles.edgarasneverdauskas.com/">Articles</a><button type="button" class="theme-switch" data-theme-cycle hidden aria-label="Colour theme: following the system. Click for light." title="Colour theme: following the system. Click for light.">
       <svg class="ti ti-system" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       <svg class="ti ti-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="ti ti-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-    </button>
-  </nav>
+    </button></div>
 </header>
-<main id="main" class="layout" data-accent="css-3d-lab">
-  <article class="story">
-    <header class="story-head">
-      <p class="kicker">Post 2 · CSS 3D Lab · 168 models</p>
-      <h1>CSS 3D Lab: 168 3D models, no WebGL</h1>
-      <p class="dek">168 3D models in pure CSS, how each one works, and code you can paste anywhere.</p>
-      <p class="byline"><span>1 picture</span><span>Ko-fi, Facebook, Instagram and LinkedIn</span></p>
-      <nav class="jump" aria-label="Jump to a platform"><a class="chip" href="#kofi">Ko-fi</a><a class="chip" href="#facebook">Facebook</a><a class="chip" href="#instagram">Instagram</a><a class="chip" href="#linkedin">LinkedIn</a></nav>
-    </header>
-    <section aria-labelledby="pics-h">
-      <h2 class="section-h" id="pics-h">Pictures</h2>
-      <div class="pics">
-        <figure class="pic pic-lead">
-          <div class="frame"><img src="../images/css-3d-lab.jpg" alt="CSS 3D Lab: 3D on the web, no WebGL required." fetchpriority="high" decoding="async"></div>
-          <figcaption>
-            <span class="pic-label">1. CSS 3D Lab</span>
-            <span class="chips">
-              <a class="chip" href="../images/css-3d-lab.jpg" download>Download</a>
-              <button type="button" class="chip" data-copy-image aria-label="Copy image, CSS 3D Lab">Copy image</button>
-            </span>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-    <section aria-labelledby="text-h">
-      <h2 class="section-h" id="text-h">Text for each platform</h2>
-      <div class="versions">
-        <div class="version" id="kofi">
-          <div class="version-head">
-            <h3>Ko-fi</h3>
-            <span class="count" title="Measured: Ko-fi's Description box stops at 700">577 / 700</span>
+<main class="layout" id="main">
+  <aside class="kit" aria-label="Share kit">
+    <details class="kit-box" id="kit">
+      <summary><span class="kit-sum"><span class="kit-title">Share kit</span><span class="kit-hint">Copy the post for each platform, and its pictures</span></span></summary>
+      <div class="kit-body">
+        <section aria-labelledby="kit-post">
+          <h2 id="kit-post">Post</h2>
+          <div class="btn-grid">
+            <button type="button" class="btn primary" data-copy="story-title">Copy title</button>
+            <button type="button" class="btn wide" data-copy="story-dek">Copy summary</button>
           </div>
-          <p class="v-title"><span class="also-label">Title</span> <span id="css-3d-lab-kofi-title">CSS 3D Lab: 168 3D models, no WebGL</span></p>
-          <pre id="css-3d-lab-kofi">A free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.
+          <p class="kit-note">The title is for Ko-fi, the one platform here with a title field. Upload the pictures in the order they are numbered.</p>
+        </section>
+        <section aria-labelledby="kit-share">
+          <h2 id="kit-share">Platforms (4)</h2>
+        <div class="share">
+          <div class="share-head">
+            <h3>Ko-fi</h3>
+            <button type="button" class="chip" data-copy="share-kofi" aria-label="Copy Ko-fi post">Copy</button>
+          </div>
+          <p class="share-meta">577 of 700 characters · Measured: Ko-fi's Description box stops at 700</p>
+          <pre id="share-kofi" tabindex="0">A free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.
 
 • 120 are pure CSS, zero JavaScript
 • 48 use JS only to feed in values like pointer position; CSS still renders
@@ -69,19 +56,14 @@ Try it: css3dlab.edgarasneverdauskas.com
 Code: github.com/Evirtual/css-3d-lab
 
 If it saved you a fight with preserve-3d, a coffee keeps the domain up.</pre>
-          <div class="chips">
-            <button type="button" class="chip" data-copy="css-3d-lab-kofi-title" aria-label="Copy Ko-fi title">Copy title</button>
-            <button type="button" class="btn" data-copy="css-3d-lab-kofi" aria-label="Copy Ko-fi text">Copy text</button>
-          </div>
-          <p class="note">Measured: Ko-fi's Description box stops at 700.</p>
         </div>
-        <div class="version" id="facebook">
-          <div class="version-head">
+        <div class="share">
+          <div class="share-head">
             <h3>Facebook</h3>
-            <span class="count" title="Facebook's post limit">459 / 63,206</span>
+            <button type="button" class="chip" data-copy="share-facebook" aria-label="Copy Facebook post">Copy</button>
           </div>
-          
-          <pre id="css-3d-lab-facebook">CSS 3D Lab is a free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.
+          <p class="share-meta">459 of 63,206 characters · Facebook's post limit</p>
+          <pre id="share-facebook" tabindex="0">CSS 3D Lab is a free gallery of 168 3D models built with CSS. Each one runs live, explains how it works, and gives you a snippet to paste into any project. No build step.
 
 • 120 are pure CSS, zero JavaScript
 • 48 use JS only to feed in values like pointer position; CSS still renders
@@ -90,19 +72,14 @@ If it saved you a fight with preserve-3d, a coffee keeps the domain up.</pre>
 
 Try it: https://css3dlab.edgarasneverdauskas.com
 Code: https://github.com/Evirtual/css-3d-lab</pre>
-          <div class="chips">
-            
-            <button type="button" class="btn" data-copy="css-3d-lab-facebook" aria-label="Copy Facebook text">Copy text</button>
-          </div>
-          <p class="note">Facebook's post limit.</p>
         </div>
-        <div class="version" id="instagram">
-          <div class="version-head">
+        <div class="share">
+          <div class="share-head">
             <h3>Instagram</h3>
-            <span class="count" title="Instagram's caption limit; links in captions are not clickable">430 / 2,200</span>
+            <button type="button" class="chip" data-copy="share-instagram" aria-label="Copy Instagram post">Copy</button>
           </div>
-          
-          <pre id="css-3d-lab-instagram">168 3D models, built with CSS. No WebGL.
+          <p class="share-meta">430 of 2,200 characters · Instagram's caption limit; links in captions are not clickable</p>
+          <pre id="share-instagram" tabindex="0">168 3D models, built with CSS. No WebGL.
 
 120 are pure CSS with zero JavaScript. The other 48 use JS only to feed in values like pointer position; CSS still does the rendering.
 
@@ -111,19 +88,14 @@ Every model runs live, explains how it works, and gives you a snippet to paste i
 Free and open source. Link in bio: CSS 3D Lab.
 
 #css #css3d #webdev #frontend #creativecoding #opensource</pre>
-          <div class="chips">
-            
-            <button type="button" class="btn" data-copy="css-3d-lab-instagram" aria-label="Copy Instagram text">Copy text</button>
-          </div>
-          <p class="note">Instagram's caption limit; links in captions are not clickable.</p>
         </div>
-        <div class="version" id="linkedin">
-          <div class="version-head">
+        <div class="share">
+          <div class="share-head">
             <h3>LinkedIn</h3>
-            <span class="count" title="LinkedIn's post limit">641 / 3,000</span>
+            <button type="button" class="chip" data-copy="share-linkedin" aria-label="Copy LinkedIn post">Copy</button>
           </div>
-          
-          <pre id="css-3d-lab-linkedin">CSS 3D Lab is a free gallery of 168 3D models built with CSS, no WebGL.
+          <p class="share-meta">641 of 3,000 characters · LinkedIn's post limit</p>
+          <pre id="share-linkedin" tabindex="0">CSS 3D Lab is a free gallery of 168 3D models built with CSS, no WebGL.
 
 120 are pure CSS with zero JavaScript. The other 48 use JavaScript only to feed in values like pointer position or time; CSS still does all the rendering.
 
@@ -133,14 +105,58 @@ The code windows are live editors, and any model can be exported as MP4, WebM, P
 
 Try it: https://css3dlab.edgarasneverdauskas.com
 Code: https://github.com/Evirtual/css-3d-lab</pre>
-          <div class="chips">
-            
-            <button type="button" class="btn" data-copy="css-3d-lab-linkedin" aria-label="Copy LinkedIn text">Copy text</button>
-          </div>
-          <p class="note">LinkedIn's post limit.</p>
         </div>
+        </section>
+        <section aria-labelledby="kit-images">
+          <h2 id="kit-images">Pictures (1)</h2>
+          <ul class="img-list">
+        <li class="img-row">
+          <img src="../images/css-3d-lab.jpg" alt="" loading="lazy" decoding="async" tabindex="0" role="button" aria-label="Open css 3d lab full size">
+          <p class="img-name">1. CSS 3D Lab<span>css-3d-lab.jpg</span></p>
+          <div class="img-more">
+            <div class="fig-tools">
+              <button type="button" class="chip" data-copy="k-alt-css-3d-lab-0" aria-label="Copy alt text, css 3d lab">Copy alt</button>
+              <a class="chip" href="../images/css-3d-lab.jpg" download aria-label="Download image, css 3d lab (css-3d-lab.jpg)">Download</a>
+            </div>
+            <details class="alt"><summary>Alt text</summary>
+              <p class="lbl">Alt text · 45 characters</p><p id="k-alt-css-3d-lab-0">CSS 3D Lab: 3D on the web, no WebGL required.</p>
+            </details>
+          </div>
+        </li>
+          </ul>
+        </section>
       </div>
-    </section>
+    </details>
+  </aside>
+  <article class="story" id="story" aria-labelledby="story-title" tabindex="-1">
+    <header class="story-head">
+      <p class="kicker">Post 2 · CSS 3D Lab · 168 models</p>
+      <h1 id="story-title">CSS 3D Lab: 168 3D models, no WebGL</h1>
+      <p class="dek" id="story-dek">168 3D models in pure CSS, how each one works, and code you can paste anywhere.</p>
+      <p class="byline"><span>Edgaras Neverdauskas</span><span>1 picture</span><span>4 platforms</span></p>
+      <nav class="also" aria-label="This post's project">
+        <p><span class="also-label">Project</span><a href="https://css3dlab.edgarasneverdauskas.com" rel="noopener">css3dlab.edgarasneverdauskas.com<span aria-hidden="true"> ↗</span></a></p>
+      </nav>
+    </header>
+    <figure class="fig fig-cover" id="fig-css-3d-lab-0">
+  <div class="frame"><img src="../images/css-3d-lab.jpg" alt="CSS 3D Lab: 3D on the web, no WebGL required." decoding="async" tabindex="0" role="button" aria-label="Open this picture" fetchpriority="high"></div>
+  <figcaption>
+    <p class="cap">1. CSS 3D Lab</p>
+    <div class="fig-tools">
+      <button type="button" class="chip" data-copy="alt-css-3d-lab-0" aria-label="Copy alt text, css 3d lab">Copy alt</button>
+      <a class="chip" href="../images/css-3d-lab.jpg" download aria-label="Download image, css 3d lab (css-3d-lab.jpg)">Download</a>
+    </div>
+    <details class="alt"><summary>Alt text <span>· 45 characters</span></summary><p id="alt-css-3d-lab-0">CSS 3D Lab: 3D on the web, no WebGL required.</p></details>
+  </figcaption>
+</figure>
+    <div class="prose" id="article-body">
+      <p>CSS 3D Lab is a free gallery of 168 3D models built with CSS, no WebGL.</p>
+      <p>120 are pure CSS with zero JavaScript. The other 48 use JavaScript only to feed in values like pointer position or time; CSS still does all the rendering.</p>
+      <p>Each model runs live, comes with a step-by-step explanation, and gives you a minimal snippet you can paste into any project without a build step. What you copy is exactly what runs on the site, with no hidden second version.</p>
+      <p>The code windows are live editors, and any model can be exported as MP4, WebM, PNG or JPEG.</p>
+      <p>Try it: <a href="https://css3dlab.edgarasneverdauskas.com" rel="noopener">css3dlab.edgarasneverdauskas.com</a><br>Code: <a href="https://github.com/Evirtual/css-3d-lab" rel="noopener">github.com/Evirtual/css-3d-lab</a></p>
+    </div>
+    
     <footer class="story-foot">
       <p class="also-end"><span><a href="../">All posts</a></span><span><a href="../intro/">What I'm building, and what a coffee pays for</a></span><span><a href="../jarvis/">JARVIS: a console that talks back, with real numbers</a></span></p>
     </footer>
@@ -151,6 +167,5 @@ Code: https://github.com/Evirtual/css-3d-lab</pre>
   <span><a href="https://articles.edgarasneverdauskas.com/">Articles</a> · <a href="https://ko-fi.com/edgarasneverdauskas">Ko-fi</a> · <a href="https://github.com/Evirtual">GitHub</a></span>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="../assets/site.js"></script>
 </body>
 </html>

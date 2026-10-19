@@ -2,7 +2,8 @@
 
 Copy-ready posts for Ko-fi, Facebook, Instagram and LinkedIn, with the pictures to go with them.
 Live at https://posts.edgarasneverdauskas.com (not indexed by search engines). Same design as
-[Articles](https://articles.edgarasneverdauskas.com).
+[Articles](https://articles.edgarasneverdauskas.com): the build copies the stylesheet, script and fonts
+from `../articles-site/docs/assets`, and each post takes its project's theme the way an article does.
 
 ## Add or change a post
 
