@@ -18,6 +18,7 @@ const PLATFORMS = data.platforms;
 const ORDER = Object.keys(PLATFORMS);
 const POSTS = data.posts;
 const PREVIEW = 'linkedin'; // the fullest version, shown as the post on its page
+const SITE_URL = 'https://posts.edgarasneverdauskas.com';
 const ARTICLES_URL = 'https://articles.edgarasneverdauskas.com';
 const HOME_URL = 'https://edgarasneverdauskas.com';
 // The themes Articles defines; a post whose accent is not one of these gets the Articles theme.
@@ -34,6 +35,43 @@ const platformNames = list(ORDER.map((k) => PLATFORMS[k].name));
 const pictures = (p) => `${p.images.length} ${p.images.length === 1 ? 'picture' : 'pictures'}`;
 const hostOf = (url) => new URL(url).host;
 const themeOf = (p) => (THEMES.includes(p.accent) ? p.accent : 'index');
+
+// A picture's size, read from the file itself, so the share card says what the file is.
+function imageSize(file) {
+  const b = fs.readFileSync(path.join('images', file));
+  if (b.readUInt32BE(0) === 0x89504e47) return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+  if (b[0] === 0xff && b[1] === 0xd8) {
+    for (let i = 2; i < b.length - 9;) {
+      if (b[i] !== 0xff) { i++; continue; }
+      const m = b[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { w: b.readUInt16BE(i + 7), h: b.readUInt16BE(i + 5) };
+      i += 2 + b.readUInt16BE(i + 2);
+    }
+  }
+  throw new Error(`images/${file}: not a PNG or JPEG the build can read the size of`);
+}
+
+// The tags a link preview reads on Facebook, LinkedIn, X and the rest -- the same set Articles has.
+function social({ url, type, title, description, image }) {
+  const { w, h } = imageSize(image.file);
+  const src = `${SITE_URL}/images/${image.file}`;
+  return `<link rel="canonical" href="${attr(url)}">
+<meta property="og:type" content="${type}">
+<meta property="og:url" content="${attr(url)}">
+<meta property="og:site_name" content="Posts — Edgaras Neverdauskas">
+<meta property="og:title" content="${attr(title)}">
+<meta property="og:description" content="${attr(description)}">
+<meta property="og:image" content="${attr(src)}">
+<meta property="og:image:alt" content="${attr(image.alt)}">
+<meta property="og:image:width" content="${w}">
+<meta property="og:image:height" content="${h}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${attr(title)}">
+<meta name="twitter:description" content="${attr(description)}">
+<meta name="twitter:image" content="${attr(src)}">
+<meta name="twitter:image:alt" content="${attr(image.alt)}">
+`;
+}
 
 // --- checks ---------------------------------------------------------------------------------
 const problems = [];
@@ -69,7 +107,7 @@ const THEME_SWITCH = `<button type="button" class="theme-switch" data-theme-cycl
 
 const headEnd = `<div class="head-end"><a class="head-link" href="${ARTICLES_URL}/">Articles</a>${THEME_SWITCH}</div>`;
 
-function page({ theme, title, description, base, homeNav, skip, main }) {
+function page({ theme, title, description, base, homeNav, skip, share, main }) {
   const fonts = FONTS[theme];
   return `<!doctype html>
 <html lang="en" data-page="${theme}">
@@ -80,7 +118,7 @@ function page({ theme, title, description, base, homeNav, skip, main }) {
 <meta name="description" content="${attr(description)}">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light dark">
-<script>try{var t=localStorage.getItem('articles-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+${share}<script>try{var t=localStorage.getItem('articles-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <link rel="icon" href="${base}images/cover-all-projects.png" type="image/png">
 ${fonts ? `<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="${attr(fonts)}">\n` : ''}<link rel="stylesheet" href="${base}assets/site.css">
 <script src="${base}assets/site.js" defer></script>
@@ -243,6 +281,11 @@ fs.writeFileSync('index.html', page({
   base: '',
   homeNav: `<a class="home" href="${HOME_URL}" aria-label="Edgaras Neverdauskas — the portfolio">${MARK}</a>`,
   skip: { id: 'main', label: 'Skip to the posts' },
+  share: social({
+    url: `${SITE_URL}/`, type: 'website', title: 'Posts — Edgaras Neverdauskas',
+    description: `Copy-ready posts for ${platformNames}, with the pictures to go with them.`,
+    image: POSTS[0].images[0],
+  }),
   main: indexMain,
 }));
 POSTS.forEach((p, i) => {
@@ -254,6 +297,7 @@ POSTS.forEach((p, i) => {
     base: '../',
     homeNav: `<a class="home" href="../"><span aria-hidden="true">←</span> All posts</a>`,
     skip: { id: 'story', label: 'Skip to the post' },
+    share: social({ url: `${SITE_URL}/${p.id}/`, type: 'article', title: p.title, description: p.summary, image: p.images[0] }),
     main: postMain(p, i),
   }));
 });
